@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="title">
+		<item name="android:textSize">15sp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	<style name="info">
+		<item name="android:textSize">13sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+</resources>
