@@ -9,6 +9,7 @@ import android.app.ActivityManager;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.format.Formatter;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -123,11 +126,32 @@ public class ProcessList extends ListActivity {
 					});
 					refreshProcessMemInfo();
 					setListAdapter(listAdapter);
+					// force it to refresh
+					getListView().refreshDrawableState();
 				}
 			}
 		}
 
 	};
+
+	static final int ABOUT = Menu.FIRST;
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, ABOUT, 0, "About").setIcon(R.drawable.about_36);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case ABOUT:
+			Intent intent = new Intent(this, About.class);
+			startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
 	private void refreshProcessMemInfo() {
 		ActivityManager.MemoryInfo minfo = new ActivityManager.MemoryInfo();
@@ -213,9 +237,8 @@ public class ProcessList extends ListActivity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		loadItems(getApplicationContext());
 		loadKilledApps();
-
+		loadItems(getApplicationContext());
 	}
 
 	private void loadKilledApps() {

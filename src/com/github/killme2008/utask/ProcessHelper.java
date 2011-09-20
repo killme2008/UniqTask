@@ -73,6 +73,7 @@ public class ProcessHelper {
 	static {
 		IGNORE_PKGS.add("system");
 		IGNORE_PKGS.add("com.android.phone");
+		IGNORE_PKGS.add("com.android.email");
 		IGNORE_PKGS.add("com.android.systemui");
 		IGNORE_PKGS.add(ProcessHelper.class.getPackage().getName());
 	}

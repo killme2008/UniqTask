@@ -11,6 +11,8 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".About" android:label="@string/about_app" />
 	</application>
 	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
 </manifest>

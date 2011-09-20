@@ -7,4 +7,10 @@
 	<string name="progress_message">Loading，Please wait……</string>
 	<string name="kill_label">Kill</string>
 	<string name="refresh_label">Refresh</string>
+	<string name="about_app">About</string>
+	<string name="about_desc">"
+Uniq Task Manager is an opensource task manager for android,just like ES task manager.
+You can checkout source at https://github.com/killme2008/UniqTask
+		"
+	</string>
 </resources>
