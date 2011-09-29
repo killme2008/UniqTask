@@ -6,6 +6,10 @@ An opensource task manager for android,just like ES task manager.
 
 Dennis (killme2008@gmail.com)
 
+#Download
+
+[https://github.com/killme2008/UniqTask/blob/master/UniqTask.apk](https://github.com/killme2008/UniqTask/blob/master/UniqTask.apk)
+
 #Licensens
 
 LGPL
