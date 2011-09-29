@@ -74,6 +74,7 @@ public class ProcessList extends ListActivity {
 					listItemSelected = new boolean[processInfos.size()];
 					List<String> deadThisTime = new ArrayList<String>(
 							killedApps);
+
 					// Selected apps which were killed in history
 					for (int i = 0; i < processInfos.size(); i++) {
 						String pkgName = (String) processInfos.get(i).get(
@@ -94,21 +95,22 @@ public class ProcessList extends ListActivity {
 						@Override
 						public View getView(int position, View convertView,
 								ViewGroup parent) {
-							if (convertView != null) {
-								if (listItemSelected[position]) {
-									convertView.setSelected(true);
-									convertView.setPressed(true);
-									convertView.setBackgroundColor(Color.GRAY);
-								} else {
-									convertView.setSelected(false);
-									convertView.setPressed(false);
-									convertView.setBackgroundColor(Color.WHITE);
-								}
+							View v = super.getView(position, convertView,
+									parent);
+							if (listItemSelected[position]) {
+								v.setSelected(true);
+								v.setPressed(true);
+								v.setBackgroundColor(Color.GRAY);
+							} else {
+								v.setSelected(false);
+								v.setPressed(false);
+								v.setBackgroundColor(Color.WHITE);
 							}
-							return super.getView(position, convertView, parent);
+							return v;
 						}
 
 					};
+
 					listAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {
 
 						@Override
@@ -126,8 +128,6 @@ public class ProcessList extends ListActivity {
 					});
 					refreshProcessMemInfo();
 					setListAdapter(listAdapter);
-					// force it to refresh
-					getListView().refreshDrawableState();
 				}
 			}
 		}
