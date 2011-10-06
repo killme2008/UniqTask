@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">UK任务管理器</string>
+	<string name="no_processes">没有正在运行的进程</string>
+	<string name="process">进程</string>
+	<string name="available_mem">可用内存</string>
+	<string name="progress_title">加载中……</string>
+	<string name="progress_message">加载中，请稍后……</string>
+	<string name="kill_label">关闭</string>
+	<string name="refresh_label">刷新</string>
+	<string name="about_app">关于</string>
+	<string name="about_desc">"
+UK任务管理器是一个android开源任务管理器，功能
+类似ES任务管理器。你可以从
+https://github.com/killme2008/UniqTask
+检出源码
+		"
+	</string>
+</resources>

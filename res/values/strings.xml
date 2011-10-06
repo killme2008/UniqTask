@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, UniqTaskActivity!</string>
 	<string name="app_name">UniqTask</string>
 	<string name="no_processes">No running processes</string>
+	<string name="process">Processes</string>
+	<string name="available_mem">Available memory</string>
 	<string name="progress_title">Loading……</string>
 	<string name="progress_message">Loading，Please wait……</string>
 	<string name="kill_label">Kill</string>
