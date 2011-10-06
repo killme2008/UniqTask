@@ -22,10 +22,9 @@ public final class R {
     public static final class id {
         public static final int appIcon=0x7f070000;
         public static final int appName=0x7f070001;
-        public static final int killBtn=0x7f070005;
-        public static final int memLabel=0x7f070003;
-        public static final int processLabel=0x7f070002;
-        public static final int refreshBtn=0x7f070004;
+        public static final int infoLabel=0x7f070002;
+        public static final int killBtn=0x7f070004;
+        public static final int refreshBtn=0x7f070003;
     }
     public static final class layout {
         public static final int about=0x7f030000;

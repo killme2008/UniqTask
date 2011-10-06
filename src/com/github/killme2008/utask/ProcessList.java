@@ -39,8 +39,7 @@ public class ProcessList extends ListActivity {
 	private HistoryHelper historyHelper;
 	private ProgressDialog progressDialog;
 
-	private TextView processLabel;
-	private TextView memlabel;
+	private TextView infoLabel;
 
 	public static final String CLASSTAG = ProcessList.class.getSimpleName();
 	private SimpleAdapter listAdapter;
@@ -156,11 +155,12 @@ public class ProcessList extends ListActivity {
 	private void refreshProcessMemInfo() {
 		ActivityManager.MemoryInfo minfo = new ActivityManager.MemoryInfo();
 		processHelper.getActivityManager().getMemoryInfo(minfo);
-		String processes = getResources().getString(R.string.process);
-		String availableMem = getResources().getString(R.string.available_mem);
-		processLabel.setText(processes + ":" + processInfos.size());
-		memlabel.setText(availableMem + ":"
-				+ Formatter.formatFileSize(getBaseContext(), minfo.availMem));
+		String processInfo = getResources().getString(R.string.process) + ":"
+				+ processInfos.size();
+		String memInfo = getResources().getString(R.string.available_mem) + ":"
+				+ Formatter.formatFileSize(getBaseContext(), minfo.availMem);
+		infoLabel.setText(processInfo + "  " + memInfo);
+
 	}
 
 	@Override
@@ -172,8 +172,7 @@ public class ProcessList extends ListActivity {
 		this.processHelper = new ProcessHelper(
 				(ActivityManager) getSystemService(ACTIVITY_SERVICE), appHelper);
 		this.historyHelper = new HistoryHelper();
-		this.processLabel = (TextView) findViewById(R.id.processLabel);
-		this.memlabel = (TextView) findViewById(R.id.memLabel);
+		this.infoLabel = (TextView) findViewById(R.id.infoLabel);
 
 		Button killButton = (Button) findViewById(R.id.killBtn);
 		killButton.setOnClickListener(new View.OnClickListener() {
