@@ -156,8 +156,10 @@ public class ProcessList extends ListActivity {
 	private void refreshProcessMemInfo() {
 		ActivityManager.MemoryInfo minfo = new ActivityManager.MemoryInfo();
 		processHelper.getActivityManager().getMemoryInfo(minfo);
-		processLabel.setText(processInfos.size() + " processes");
-		memlabel.setText("Avaiable memory:"
+		String processes = getResources().getString(R.string.process);
+		String availableMem = getResources().getString(R.string.available_mem);
+		processLabel.setText(processes + ":" + processInfos.size());
+		memlabel.setText(availableMem + ":"
 				+ Formatter.formatFileSize(getBaseContext(), minfo.availMem));
 	}
 
